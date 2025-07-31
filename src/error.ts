@@ -1,15 +1,15 @@
 import { ErrorCode } from "./codes.ts";
 
 /**
- * HTTP Error Class With Status Pair
+ * HTTP Error Class
  */
 export class HttpError extends Error {
   /**
-   * HTTP 4xx/5xx Status Code
+   * HTTP Error Status Code
    */
   readonly status: number;
   /**
-   * HTTP 4xx/5xx Code Phrase
+   * HTTP Error Code Phrase
    */
   readonly phrase: string;
 
