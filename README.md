@@ -1,19 +1,11 @@
-<h3 align="center">
-        HTTP Error
-</h3>
+<h3 align="center">HTTP Error</h3>
 <p align="center">Convenient HTTP Error Utilities</p>
 
 ---
 
 ### Usage
 
-Add this package to your project:
-
-```bash
-deno add jsr:@wvm/http-error
-```
-
-And enjoy hassle-free HTTP error status handling:
+Enjoy hassle-free HTTP error status handling:
 
 ```ts
 import { ErrorCode, HttpError, raise } from "@wvm/http-error";
