@@ -1,0 +1,8 @@
+{
+  "name": "@wvm/&pack",
+  "version": "0.0.0-r",
+  "publish": {
+    "exclude": ["assets"]
+  },
+  "exports": "./src/index.ts"
+}
