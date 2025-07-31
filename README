@@ -1,22 +1,38 @@
-<!-- replace all &pack -->
-
 <h3 align="center">
-	<img src="https://raw.githubusercontent.com/wavim/&pack/master/assets/icon.png" width="130" alt="&pack icon" />
-        <br />
-        &pack name
+        HTTP Error
 </h3>
-<p align="center">&pack description</p>
+<p align="center">Convenient HTTP Error Utilities</p>
 
 ---
 
 ### Usage
 
-Add this package in your project:
+Add this package to your project:
 
 ```bash
-deno add jsr:@wvm/&pack
+deno add jsr:@wvm/http-error
 ```
 
----
+And enjoy hassle-free HTTP error status handling:
 
-_&emsp;_ &pack quotes
+```ts
+import { ErrorCode, HttpError, raise } from "@wvm/http-error";
+
+// ErrorCode Mapper
+ErrorCode.NOT_FOUND; // 404
+ErrorCode[404]; // NOT_FOUND
+
+// HttpError Raiser
+throw raise("NOT_FOUND")`Missing Page`;
+throw raise(404)`Missing Page`;
+
+// ->
+error.status; // 404
+error.phrase; // NOT_FOUND
+error.message; // 404 NOT_FOUND: Missing Page
+
+// HttpError Result
+if (error instanceof HttpError) {
+  res.status(error.status).send(error.message);
+}
+```

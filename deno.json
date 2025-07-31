@@ -1,6 +1,6 @@
 {
-  "name": "@wvm/&pack",
-  "version": "0.0.0-r",
+  "name": "@wvm/http-error",
+  "version": "1.0.0",
   "publish": {
     "exclude": ["assets"]
   },
