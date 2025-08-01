@@ -2,9 +2,9 @@ import type { ErrorCode } from "./codes.ts";
 import { HttpError } from "./error.ts";
 
 /**
- * Get HTTP Error With Tagged Templates
+ * HTTP Error With Tagged Templates
  * @param error HTTP Error Code/Phrase
- * @returns Tag Function For HTTP Error
+ * @returns HTTP Error Tag Function
  */
 export function raise(
   error: ErrorCode | keyof typeof ErrorCode,
