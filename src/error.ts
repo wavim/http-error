@@ -15,12 +15,15 @@ export class HttpError extends Error {
 
   /**
    * @param error HTTP Error Code/Phrase
-   * @param message HTTP Error Details
+   * @param message HTTP Error Message
    */
-  constructor(error: ErrorCode | keyof typeof ErrorCode, message: string) {
-    super(message);
+  constructor(error: ErrorCode | keyof typeof ErrorCode, message?: string) {
+    const status = typeof error === "number" ? error : ErrorCode[error];
+    const phrase = typeof error === "number" ? ErrorCode[error] : error;
 
-    this.status = typeof error === "number" ? error : ErrorCode[error];
-    this.phrase = typeof error === "number" ? ErrorCode[error] : error;
+    super(message ?? `${status} ${phrase}`);
+
+    this.status = status;
+    this.phrase = phrase;
   }
 }

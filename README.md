@@ -8,15 +8,15 @@
 Enjoy hassle-free HTTP error status handling:
 
 ```ts
-import { ErrorCode, HttpError, raise } from "@wvm/http-error";
+import { ErrorCode, HttpError } from "@wvm/http-error";
 
-// ErrorCode Mapper
+// Map ErrorCode
 ErrorCode[404]; // NOT_FOUND
 ErrorCode.NOT_FOUND; // 404
 
-// HttpError Raiser
-throw raise(404)`Missing Page`;
-throw raise("NOT_FOUND")`Missing Page`;
+// Get HttpError
+throw new HttpError(404, "Missing Page");
+throw new HttpError("NOT_FOUND", "Missing Page");
 
 // ->
 error.status; // 404
